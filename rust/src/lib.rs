@@ -1,8 +1,12 @@
+use bevy::prelude::*;
 use godot::prelude::*;
+use godot_bevy::prelude::*;
 
-struct RustExtension;
+#[bevy_app]
+fn build_app(app: &mut App) {
+    app.add_systems(Startup, hello_world);
+}
 
-#[gdextension]
-unsafe impl ExtensionLibrary for RustExtension {}
-
-mod player;
+fn hello_world() {
+    godot::prelude::godot_print!("Hello from godot-bevy!");
+}

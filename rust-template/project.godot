@@ -15,6 +15,10 @@ run/main_scene="uid://c7iskwgu5aphr"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://dcvpakna8i04d"
 
+[autoload]
+
+BevyAppSingleton="*res://bevy_app_singleton.tscn"
+
 [display]
 
 window/size/viewport_width=1920
