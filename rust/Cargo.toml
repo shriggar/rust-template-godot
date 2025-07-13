@@ -5,7 +5,9 @@ edition = "2024"
 license = "MIT"
 
 [dependencies]
-godot = "0.2.4"
+godot = "0.3.2"
+godot-bevy = "0.7.0"
+bevy = { version = "0.16.1", default-features = false }
 
 [lib]
 crate-type = ["cdylib"] # Compile this crate to a dynamic C library.
