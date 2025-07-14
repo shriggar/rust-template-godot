@@ -17,7 +17,7 @@ config/icon="uid://dcvpakna8i04d"
 
 [autoload]
 
-BevyAppSingleton="*res://bevy_app_singleton.tscn"
+BevyAppSingleton="*res://scenes/bevy_app_singleton.tscn"
 
 [display]
 
