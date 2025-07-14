@@ -4,7 +4,8 @@ use godot_bevy::prelude::*;
 
 #[bevy_app]
 fn build_app(app: &mut App) {
-    app.add_systems(Startup, hello_world);
+    app.add_plugins(GodotDefaultPlugins)
+        .add_systems(Startup, hello_world);
 }
 
 fn hello_world() {

@@ -14,7 +14,7 @@ opt-level = 3
 
 [dependencies]
 godot = "0.3.2"
-godot-bevy = "0.7.0"
+godot-bevy = { git = "https://github.com/bytemeadow/godot-bevy", branch = "main" }
 bevy = { version = "0.16.1", default-features = false }
 
 [lib]
