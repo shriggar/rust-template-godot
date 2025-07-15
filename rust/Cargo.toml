@@ -16,6 +16,10 @@ opt-level = 3
 godot = "0.3.2"
 godot-bevy = { git = "https://github.com/bytemeadow/godot-bevy", branch = "main" }
 bevy = { version = "0.16.1", default-features = false }
+bevy_asset_loader = "0.23.0"
+fastrand = { version = "2.3.0" }
+which = "8.0.0"
+
 
 [lib]
 crate-type = ["cdylib"] # Compile this crate to a dynamic C library.
