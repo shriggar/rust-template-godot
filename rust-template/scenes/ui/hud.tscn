@@ -1,5 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdyp538fqygcq"]
-
+[gd_scene format=3 uid="uid://bdyp538fqygcq"]
 
 [node name="HUD" type="CanvasLayer"]
 
