@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Rust Template"
-run/main_scene="uid://barrr2xbxjwc6"
+run/main_scene="uid://c7iskwgu5aphr"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://dcvpakna8i04d"
 

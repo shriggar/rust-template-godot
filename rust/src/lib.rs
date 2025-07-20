@@ -6,17 +6,19 @@ use godot_bevy::prelude::{
     godot_prelude::{ExtensionLibrary, gdextension},
     *,
 };
-/*
+
 mod components;
 mod gameplay;
 mod level_manager;
 mod main_menu;
 mod scene_management;
-*/
+
 #[bevy_app]
 fn build_app(app: &mut App) {
+    app.insert_resource(GodotTransformConfig::two_way())
+    
     // This example uses most godot-bevy features
-    app.add_plugins(GodotDefaultPlugins)
+    .add_plugins(GodotDefaultPlugins)
      /*    .add_plugins(StatesPlugin)
         .init_state::<GameState>()
        .add_loading_state(
@@ -31,7 +33,7 @@ fn build_app(app: &mut App) {
             gameplay::GameplayPlugin,
         )) */;
 }
-/*
+ 
 #[derive(Debug, Default, Clone, Eq, PartialEq, Hash, States)]
 enum GameState {
     #[default]
@@ -39,4 +41,4 @@ enum GameState {
     MainMenu,
     InGame,
 }
-*/
+ 
