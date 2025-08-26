@@ -45,6 +45,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fc7eb209b1518d6bb87b283c20095f5228ecda460da70b44f0802523dea6da04"
 
 [[package]]
+name = "android-tzdata"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e999941b234f3131b00bc13c22d06e8c5ff726d1b6318ac7eb276997bbb4fef0"
+
+[[package]]
 name = "android_log-sys"
 version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1030,6 +1036,20 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "613afe47fcd5fac7ccf1db93babcb082c5994d996f20b8b159f2ad1658eb5724"
 
 [[package]]
+name = "chrono"
+version = "0.4.41"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c469d952047f47f91b68d1cba3f10d63c11d73e4636f24f08daf0278abf01c4d"
+dependencies = [
+ "android-tzdata",
+ "iana-time-zone",
+ "js-sys",
+ "num-traits",
+ "wasm-bindgen",
+ "windows-link",
+]
+
+[[package]]
 name = "clang-sys"
 version = "1.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1536,9 +1556,9 @@ dependencies = [
 
 [[package]]
 name = "godot"
-version = "0.3.2"
+version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e5c4b80a6697ab47cbe03beaa519b4f40fc408ee43b853842224d5d4bdeb85ad"
+checksum = "ab462a365a4b8bcfcdaf93afe767a189a183edfb1d1e697bde9fb26c3f9bfbe9"
 dependencies = [
  "godot-core",
  "godot-macros",
@@ -1546,26 +1566,28 @@ dependencies = [
 
 [[package]]
 name = "godot-bevy"
-version = "0.8.4"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "58df7aba2630d5802170e52c3533f3f35b97d7b600c91e4ba725c81427cf442a"
+checksum = "ee3f85e97fc776e371f3c107310af36ab6b2a45212b27339c79422e8ff9150fa"
 dependencies = [
  "bevy",
+ "chrono",
  "futures-lite",
  "godot",
  "godot-bevy-macros",
  "inventory",
- "lazy_static",
  "once_cell",
  "parking_lot",
+ "paste",
  "thiserror 2.0.12",
+ "tracing",
 ]
 
 [[package]]
 name = "godot-bevy-macros"
-version = "0.8.4"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4fbfa0490105c642af7f2350a8345cd7478e3b811350e7589004dff4fc7a7448"
+checksum = "65de0cdfba8300acdd9ca71ac5fd53ed816c3b9912001915fb04db66198dccb9"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1574,24 +1596,24 @@ dependencies = [
 
 [[package]]
 name = "godot-bindings"
-version = "0.3.2"
+version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e3ef8e3a3873c1c442b66da8ad939d12ab3ba2bb8c929bc9d45ae4d46047dbd4"
+checksum = "597469df0a890b2c7f102b094942e6b184e7ee573adf6ed35fad0421ee86b8fa"
 dependencies = [
  "gdextension-api",
 ]
 
 [[package]]
 name = "godot-cell"
-version = "0.3.2"
+version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2e792bd37ca9b374ab70293bf1b62c17083048938773e9fe527fa844ba411c27"
+checksum = "7e48bf49cf5d6ef0b64b2a58be980e4854f57e75b822889d639f96c3c098a5ec"
 
 [[package]]
 name = "godot-codegen"
-version = "0.3.2"
+version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d1af2c1cf73ea183c4d6b3344259da3de41bf76df17227fa4c3fa309eecceb0d"
+checksum = "282e80108e93950e66ed3a40f7dcb6f61978ecb0dd2d19ad7028799d6a5537cb"
 dependencies = [
  "godot-bindings",
  "heck",
@@ -1603,9 +1625,9 @@ dependencies = [
 
 [[package]]
 name = "godot-core"
-version = "0.3.2"
+version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "24fb24e8689e236c80ad7580f87491c90a7f5f6fba8ea6f41863993d5b2b5b8f"
+checksum = "2593ce360312bdec4c45994402dc624c43c3dd8741c8e6391958626dcf635b40"
 dependencies = [
  "glam 0.30.4",
  "godot-bindings",
@@ -1616,9 +1638,9 @@ dependencies = [
 
 [[package]]
 name = "godot-ffi"
-version = "0.3.2"
+version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d6f6f4fbcd1be7bae4c4e781c727317e68879afa1a6e33cd412160bc17e42827"
+checksum = "8ce5ae6a7ae29a753f2f0af3d2a2f3194fa482d9900fc167f35a0738fe7d54d2"
 dependencies = [
  "godot-bindings",
  "godot-codegen",
@@ -1628,9 +1650,9 @@ dependencies = [
 
 [[package]]
 name = "godot-macros"
-version = "0.3.2"
+version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1b32a375c5a9852de4201751dbc650a39609c8f618c0a2c156958fd9fe6148e4"
+checksum = "2a0f3ebf0fe09733267c4631ae0af2d6b1008b322d032832ddcfb4dfc54607ad"
 dependencies = [
  "godot-bindings",
  "proc-macro2",
@@ -1762,6 +1784,30 @@ name = "hexf-parse"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "dfa686283ad6dd069f105e5ab091b04c62850d3e4cf5d67debad1933f55023df"
+
+[[package]]
+name = "iana-time-zone"
+version = "0.1.63"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b0c919e5debc312ad217002b8048a17b7d83f80703865bbfcfebb0458b0b27d8"
+dependencies = [
+ "android_system_properties",
+ "core-foundation-sys",
+ "iana-time-zone-haiku",
+ "js-sys",
+ "log",
+ "wasm-bindgen",
+ "windows-core 0.61.2",
+]
+
+[[package]]
+name = "iana-time-zone-haiku"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f31827a206f56af32e590ba56d5d2d085f558508192593743f16b2306495269f"
+dependencies = [
+ "cc",
+]
 
 [[package]]
 name = "image"
